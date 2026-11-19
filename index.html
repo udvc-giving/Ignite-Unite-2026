@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#575473">
+<title>Your Action Makes Change | Utah Domestic Violence Coalition</title>
+<meta name="description" content="Watch how your action makes change, then support Utah Domestic Violence Coalition.">
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#303030;background:#f0f2f7}*{box-sizing:border-box}body{margin:0}header{background:#575473;color:white;text-align:center;padding:34px 18px 29px}header .org{font-size:13px;letter-spacing:2px;font-weight:bold}h1{font-size:clamp(29px,5vw,48px);margin:15px 0 9px}header p{margin:0;color:#f0f2f7;font-size:17px}main{max-width:820px;margin:30px auto 50px;padding:0 16px}.panel{background:white;border-radius:18px;padding:clamp(16px,4vw,32px);box-shadow:0 8px 26px #5754731a}.video{aspect-ratio:16/9;background:#252525;border-radius:10px;overflow:hidden;position:relative}.video iframe,.video #player{width:100%;height:100%;border:0}.video #player{position:absolute;inset:0}.intro{text-align:center;font-size:19px;line-height:1.5;margin:22px 0}.actions{text-align:center}.button{display:inline-block;background:#575473;color:white;text-decoration:none;padding:15px 28px;border-radius:8px;font-size:18px;font-weight:700;min-width:210px}.button:hover,.button:focus{background:#403d60}.note{font-size:14px;line-height:1.5;color:#56566a;text-align:center;margin:15px 0 0}.status{font-size:14px;color:#575473;text-align:center;min-height:20px;margin-top:12px}footer{text-align:center;color:#575473;font-size:13px;padding:0 16px 28px}a:focus-visible{outline:3px solid #96a58a;outline-offset:3px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="org">UTAH DOMESTIC VIOLENCE COALITION</div><h1>Your Action Makes Change</h1><p>Together, we can create a safer Utah.</p></header>
+<main><section class="panel" aria-label="Fundraising video and donation">
+<div class="video"><div id="player" aria-label="Fundraising video"></div></div>
+<p class="intro">Watch how your support makes a difference for survivors across Utah.</p>
+<div class="actions"><a class="button" id="donate" href="https://form-renderer-app.donorperfect.io/give/utah-domestic-violence-coalition/utah-domestic-violence-coalition-general-donation-form-mail">Skip to Donate</a></div>
+<p class="note">When the video finishes, you'll automatically continue to our secure donation form. You can donate at any time using the button above.</p>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+</section></main><footer>Utah Domestic Violence Coalition</footer>
+<script>
+(function(){
+'use strict';
+const donationUrl='https://form-renderer-app.donorperfect.io/give/utah-domestic-violence-coalition/utah-domestic-violence-coalition-general-donation-form-mail';
+const status=document.getElementById('status');
+let redirected=false;
+window.onYouTubeIframeAPIReady=function(){
+new YT.Player('player',{
+videoId:'25GQHoNZUUU',playerVars:{playsinline:1,rel:0},
+events:{onStateChange:function(event){
+if(event.data===YT.PlayerState.ENDED&&!redirected){
+redirected=true;status.textContent='Video complete. Taking you to the donation page…';
+window.location.assign(donationUrl);
+}
+},onError:function(){status.textContent='Video unavailable. You can still donate using the button above.';}}
+});
+};
+const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';script.onerror=function(){status.textContent='Unable to load video. Please use the donation button above.'};document.head.appendChild(script);
+})();
+</script>
+</body></html>
